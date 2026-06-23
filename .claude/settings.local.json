@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(try { $w = Invoke-WebRequest -Uri \"http://localhost:3000/work\" -UseBasicParsing -TimeoutSec 60; $err = if \\($w.Content -match \"Parsing ecmascript|Build Error\"\\) { \"BUILD-ERROR\" } else { \"ok\" }; $dariyaa = \\([regex]::Matches\\($w.Content, \"instagram/dariyaa\"\\)\\).Count; $bhooth = \\([regex]::Matches\\($w.Content, \"instagram/bhooth\"\\)\\).Count; $oldPlaceholder = if \\($w.Content -match \"Shark Tank|MasterChef|Prithvi Raj\"\\) { \"OLD-STILL-THERE\" } else { \"old-removed\" }; \"work => $\\($w.StatusCode\\); $err; dariyaa_imgs=$dariyaa; bhooth_imgs=$bhooth; $oldPlaceholder\" } catch { \"work => DOWN/ERR: $\\($_.Exception.Message\\)\" })"
+    ]
+  }
+}
