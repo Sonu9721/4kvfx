@@ -10,9 +10,6 @@ export default function ManualInstagramGrid({
   posts: InstagramPost[];
 }) {
   const [active, setActive] = useState<InstagramPost | null>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     document.body.style.overflow = active ? "hidden" : "";
@@ -83,13 +80,13 @@ export default function ManualInstagramGrid({
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-px">
+      <div className="grid grid-cols-3 gap-[3px] bg-black">
         {posts.map((post) => (
           <button
             key={post.image}
             onClick={() => setActive(post)}
             aria-label={post.title}
-            className="group relative aspect-[4/5] overflow-hidden bg-surface"
+            className="group relative block aspect-[4/5] w-full appearance-none overflow-hidden border-0 bg-surface p-0"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -117,7 +114,7 @@ export default function ManualInstagramGrid({
           </button>
         ))}
       </div>
-      {mounted && active && createPortal(lightbox, document.body)}
+      {active && createPortal(lightbox, document.body)}
     </>
   );
 }

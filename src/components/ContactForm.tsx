@@ -72,7 +72,7 @@ export default function ContactForm() {
       />
       <button
         type="submit"
-        className="rounded-md bg-accent px-7 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+        className="rounded-md bg-accent px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
       >
         Send inquiry
       </button>

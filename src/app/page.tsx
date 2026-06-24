@@ -2,7 +2,8 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 import HeroVideo from "@/components/HeroVideo";
 import Reveal from "@/components/Reveal";
-import { site, services, projects, stats } from "@/lib/content";
+import BrandShowcase from "@/components/BrandShowcase";
+import { site, services, projects } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
               href={`https://www.youtube.com/watch?v=${site.showreelYouTubeId}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
               <Icon name="play" className="h-4 w-4" />
               Watch showreel
@@ -65,75 +66,89 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Brands Section */}
+      <BrandShowcase />
 
-      {/* Stats / trust */}
-      <section className="border-b border-border bg-surface">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 py-16 sm:grid-cols-4">
-          {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 80} className="text-center">
-              <p className="text-3xl font-medium text-accent sm:text-4xl">
-                {s.value}
-              </p>
-              <p className="mt-2 text-sm text-muted">{s.label}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* Featured work */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <div className="mb-12 flex items-end justify-between">
-            <p className="text-sm uppercase tracking-[0.2em] text-muted">
-              Featured work
+      {/* Partners Section */}
+      <section className="border-b border-border bg-surface/50 py-20">
+        <div className="mx-auto max-w-6xl px-6 text-center">
+          <Reveal className="mb-12">
+            <span className="text-xs uppercase tracking-[0.25em] text-accent font-semibold bg-accent/10 px-4 py-1.5 rounded-full border border-accent/20">
+              Broadcast Partners
+            </span>
+            <h2 className="mt-6 text-3xl font-medium sm:text-4xl">Our Channel Partners</h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm text-muted">
+              Proudly collaborating with leading television networks and digital streaming platforms to deliver content.
             </p>
-            <Link href="/work" className="text-sm text-accent hover:opacity-80">
-              View all →
-            </Link>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.slice(0, 6).map((p, i) => (
-              <Reveal key={p.slug} delay={(i % 3) * 80}>
-                <Link href={`/work/${p.slug}`}>
-                  <article className="group relative aspect-[16/10] overflow-hidden rounded-lg border border-border bg-surface">
-                  {p.thumb ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={p.thumb}
-                      alt={`${p.title} — ${p.category} for ${p.client}`}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center text-xs text-muted">
-                      project image
-                    </div>
-                  )}
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                      <p className="text-sm font-medium">{p.title}</p>
-                      <p className="text-xs text-muted">
-                        {p.client} · {p.category}
-                      </p>
-                    </div>
-                  </article>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+          </Reveal>
 
-      {/* Clients */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-6xl px-6 py-16 text-center">
-          <p className="mb-10 text-sm uppercase tracking-[0.2em] text-muted">
-            Trusted by
-          </p>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/brand/clients.jpg"
-            alt="Clients of 4K Visuals including Sony, Zee, Colors, Star, Pepsico, P&G, Big Magic and more"
-            className="mx-auto w-full max-w-4xl rounded-lg"
-          />
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center">
+            <Reveal delay={80}>
+              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/partners/partner-1.jpg"
+                  alt="Sony Group channels"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </Reveal>
+
+            <Reveal delay={160}>
+              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/partners/partner-2.jpg"
+                  alt="Sony Group channels part 2"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </Reveal>
+
+            <Reveal delay={240}>
+              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/partners/partner-3.jpg"
+                  alt="Colors Viacom18 channels"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </Reveal>
+
+            <Reveal delay={320}>
+              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/partners/partner-4.jpg"
+                  alt="OTT Digital platforms"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </Reveal>
+
+            <Reveal delay={400}>
+              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/partners/partner-5.jpg"
+                  alt="Star Disney channels"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </Reveal>
+
+            <Reveal delay={480}>
+              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/partners/partner-6.jpg"
+                  alt="Zee Group channels"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -148,7 +163,7 @@ export default function Home() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-block rounded-md bg-accent px-7 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+            className="mt-8 inline-block rounded-md bg-accent px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
           >
             Start a project
           </Link>

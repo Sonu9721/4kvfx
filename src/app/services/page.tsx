@@ -43,7 +43,7 @@ export default function ServicesPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-block rounded-md bg-accent px-7 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+            className="mt-6 inline-block rounded-md bg-accent px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
           >
             Talk to us
           </Link>

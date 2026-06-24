@@ -77,7 +77,7 @@ for (const it of items) {
   const num = String(n).padStart(4, "0");
   const name = `ig-${num}.jpg`;
   const dest = path.join(OUT_IMG, name);
-  const common = ["-vf", "scale=640:800:force_original_aspect_ratio=increase,crop=640:800", "-q:v", "4", dest];
+  const common = ["-vf", "scale=640:640:force_original_aspect_ratio=increase,crop=640:640", "-q:v", "4", dest];
 
   // Thumbnail — skip if already generated (keeps re-runs fast).
   if (!fs.existsSync(dest)) {

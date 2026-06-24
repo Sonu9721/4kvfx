@@ -6,7 +6,7 @@
   --muted: #9a9a9a;
   --surface: #141414;
   --border: #242424;
-  --accent: #e0b65c;
+  --accent: #ff5e00;
 }
 
 @theme inline {
@@ -21,10 +21,11 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
-  background: var(--background);
+  background: transparent;
   color: var(--foreground);
 }
 
@@ -115,3 +116,52 @@ body {
     transition: none;
   }
 }
+
+/* Brand Wall Float Animations (Breathing effect in different directions) */
+@keyframes brand-float-1 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-6px, -8px) rotate(-2.5deg); }
+}
+@keyframes brand-float-2 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(6px, 8px) rotate(2.5deg); }
+}
+@keyframes brand-float-3 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(8px, -6px) rotate(2deg); }
+}
+@keyframes brand-float-4 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-8px, 6px) rotate(-2deg); }
+}
+
+.animate-brand-float-1 { animation: brand-float-1 1.8s ease-in-out infinite alternate; }
+.animate-brand-float-2 { animation: brand-float-2 2.2s ease-in-out infinite alternate; }
+.animate-brand-float-3 { animation: brand-float-3 1.5s ease-in-out infinite alternate; }
+.animate-brand-float-4 { animation: brand-float-4 2.5s ease-in-out infinite alternate; }
+
+
+
+/* Ambient VFX Floating Dust Particles Animation */
+@keyframes float-particle {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.35;
+  }
+  90% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-120px) translateX(30px);
+    opacity: 0;
+  }
+}
+.animate-float-particle {
+  animation: float-particle 15s linear infinite;
+}
+
+
+

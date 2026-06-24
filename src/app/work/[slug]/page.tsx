@@ -108,7 +108,7 @@ export default async function ProjectPage({
                   />
                 </figure>
                 <figure className="relative overflow-hidden rounded-lg border border-border">
-                  <span className="absolute left-3 top-3 z-10 rounded bg-accent px-2 py-1 text-xs text-background">
+                  <span className="absolute left-3 top-3 z-10 rounded bg-accent px-2 py-1 text-xs text-white">
                     After
                   </span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -132,7 +132,7 @@ export default async function ProjectPage({
         <p className="text-lg">Like what you see?</p>
         <Link
           href="/contact"
-          className="mt-5 inline-block rounded-md bg-accent px-7 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+          className="mt-5 inline-block rounded-md bg-accent px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
         >
           Start a project
         </Link>

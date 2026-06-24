@@ -32,7 +32,7 @@ export const site = {
 export const team = [
   {
     name: "Chandra Bhan Kushwaha",
-    role: "Founder & Chief Executive Officer",
+    role: "Founder & Director",
     photo: "/team/chandra.png",
     bio: [
       "Chandra Bhan Kushwaha has been responsible for the development, growth and strategy creation in order to have 4K VISUALS utilize its full potential.",
