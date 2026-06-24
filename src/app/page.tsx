@@ -70,7 +70,7 @@ export default function Home() {
       <BrandShowcase />
 
       {/* Partners Section */}
-      <section className="border-b border-border bg-surface/50 py-20">
+      <section className="bg-transparent py-20">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <Reveal className="mb-12">
             <span className="text-xs uppercase tracking-[0.25em] text-accent font-semibold bg-accent/10 px-4 py-1.5 rounded-full border border-accent/20">
@@ -82,12 +82,12 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center">
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center mt-8">
             <Reveal delay={80}>
-              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+              <div className="overflow-hidden rounded-xl bg-transparent transition-transform duration-300 hover:scale-105 h-full flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/partners/partner-1.jpg"
+                  src="/partners/partner-1.png"
                   alt="Sony Group channels"
                   className="w-full h-auto object-contain"
                 />
@@ -95,10 +95,10 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={160}>
-              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+              <div className="overflow-hidden rounded-xl bg-transparent transition-transform duration-300 hover:scale-105 h-full flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/partners/partner-2.jpg"
+                  src="/partners/partner-2.png"
                   alt="Sony Group channels part 2"
                   className="w-full h-auto object-contain"
                 />
@@ -106,10 +106,10 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={240}>
-              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+              <div className="overflow-hidden rounded-xl bg-transparent transition-transform duration-300 hover:scale-105 h-full flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/partners/partner-3.jpg"
+                  src="/partners/partner-3.png"
                   alt="Colors Viacom18 channels"
                   className="w-full h-auto object-contain"
                 />
@@ -117,10 +117,10 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={320}>
-              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+              <div className="overflow-hidden rounded-xl bg-transparent transition-transform duration-300 hover:scale-105 h-full flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/partners/partner-4.jpg"
+                  src="/partners/partner-4.png"
                   alt="OTT Digital platforms"
                   className="w-full h-auto object-contain"
                 />
@@ -128,10 +128,10 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={400}>
-              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+              <div className="overflow-hidden rounded-xl bg-transparent transition-transform duration-300 hover:scale-105 h-full flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/partners/partner-5.jpg"
+                  src="/partners/partner-5.png"
                   alt="Star Disney channels"
                   className="w-full h-auto object-contain"
                 />
@@ -139,10 +139,10 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={480}>
-              <div className="overflow-hidden rounded-xl border border-border bg-background transition-transform duration-300 hover:scale-[1.02] h-full flex items-center justify-center">
+              <div className="overflow-hidden rounded-xl bg-transparent transition-transform duration-300 hover:scale-105 h-full flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/partners/partner-6.jpg"
+                  src="/partners/partner-6.png"
                   alt="Zee Group channels"
                   className="w-full h-auto object-contain"
                 />
