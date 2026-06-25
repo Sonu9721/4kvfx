@@ -3,7 +3,8 @@ import Icon from "@/components/Icon";
 import HeroVideo from "@/components/HeroVideo";
 import Reveal from "@/components/Reveal";
 import BrandShowcase from "@/components/BrandShowcase";
-import { site, services, projects } from "@/lib/content";
+import { site } from "@/lib/content";
+import ServicesShowcase from "@/components/ServicesShowcase";
 
 export default function Home() {
   return (
@@ -45,27 +46,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <p className="mb-12 text-sm uppercase tracking-[0.2em] text-muted">
-            What we do
-          </p>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            {services.map((s, i) => (
-              <Reveal key={s.title} delay={i * 80}>
-                <div className="h-full rounded-lg border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent">
-                  <Icon name={s.icon as never} className="h-7 w-7 text-accent" />
-                  <h3 className="mt-5 text-lg font-medium">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
-                    {s.text}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Services Showcase Redesign */}
+      <ServicesShowcase />
       {/* Brands Section */}
       <BrandShowcase />
 

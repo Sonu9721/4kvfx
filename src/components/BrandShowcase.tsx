@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 
 // Realistic 3D Film Reel Spool Component
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 function FilmReel({ 
   id, 
   className = "", 
@@ -159,6 +160,23 @@ interface TiltState {
   y: number;
 }
 
+const STATIC_PARTICLES = [
+  { width: 3.5, height: 4.2, left: 12, top: 45, delay: 1.2, duration: 18 },
+  { width: 2.1, height: 2.1, left: 45, top: 78, delay: 0.5, duration: 22 },
+  { width: 4.8, height: 3.2, left: 88, top: 15, delay: 4.1, duration: 15 },
+  { width: 2.7, height: 2.9, left: 34, top: 62, delay: 2.8, duration: 25 },
+  { width: 3.9, height: 4.0, left: 67, top: 28, delay: 5.3, duration: 19 },
+  { width: 2.4, height: 2.2, left: 19, top: 91, delay: 0.1, duration: 14 },
+  { width: 4.5, height: 4.7, left: 53, top: 50, delay: 3.6, duration: 21 },
+  { width: 3.0, height: 3.1, left: 82, top: 73, delay: 6.2, duration: 26 },
+  { width: 2.2, height: 2.5, left: 29, top: 12, delay: 1.9, duration: 17 },
+  { width: 4.1, height: 4.3, left: 74, top: 88, delay: 4.8, duration: 20 },
+  { width: 3.7, height: 3.5, left: 61, top: 37, delay: 2.4, duration: 23 },
+  { width: 2.8, height: 2.6, left: 5, top: 59, delay: 0.9, duration: 16 },
+  { width: 4.9, height: 4.1, left: 93, top: 41, delay: 3.1, duration: 24 },
+  { width: 3.3, height: 3.2, left: 40, top: 95, delay: 5.7, duration: 22 }
+];
+
 export default function BrandShowcase() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [tiltState, setTiltState] = useState<TiltState | null>(null);
@@ -203,6 +221,8 @@ export default function BrandShowcase() {
 
     return () => observer.disconnect();
   }, []);
+
+
 
   // Track global cursor coordinates inside showcase section for backdrop light-glow follow
   const handleContainerMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -250,17 +270,17 @@ export default function BrandShowcase() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         
         {/* Soft floating dust particles */}
-        {isVisible && [...Array(14)].map((_, idx) => (
+        {isVisible && STATIC_PARTICLES.map((p, idx) => (
           <div
             key={idx}
             className="absolute bg-accent/20 rounded-full blur-[1px] animate-float-particle"
             style={{
-              width: `${Math.random() * 3 + 2}px`,
-              height: `${Math.random() * 3 + 2}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 7}s`,
-              animationDuration: `${14 + Math.random() * 12}s`,
+              width: `${p.width}px`,
+              height: `${p.height}px`,
+              left: `${p.left}%`,
+              top: `${p.top}%`,
+              animationDelay: `${p.delay}s`,
+              animationDuration: `${p.duration}s`,
             }}
           />
         ))}
