@@ -148,9 +148,9 @@ export default function ServicesShowcase() {
   const activeService = activeCardIndex !== null ? SERVICES_DATA[activeCardIndex] : null;
 
   return (
-    <section className="relative border-b border-border bg-transparent py-24 select-none overflow-hidden z-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-14 text-sm uppercase tracking-[0.2em] text-muted text-center xl:text-left">
+    <section className="border-b border-border relative select-none overflow-hidden z-20">
+      <div className="mx-auto max-w-6xl px-6 py-20">
+        <p className="mb-12 text-sm uppercase tracking-[0.2em] text-muted">
           What we do
         </p>
 
