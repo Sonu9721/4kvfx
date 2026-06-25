@@ -80,35 +80,24 @@ export default function ManualInstagramGrid({
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-[3px] bg-black">
+      <div className="instagram-grid">
         {posts.map((post) => (
           <button
             key={post.image}
             onClick={() => setActive(post)}
             aria-label={post.title}
-            className="group relative block aspect-[4/5] w-full appearance-none overflow-hidden border-0 bg-surface p-0"
+            className="instagram-tile group"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={post.image}
               alt=""
-              className="h-full w-full object-cover transition duration-500 group-hover:scale-105 group-hover:brightness-75"
+              className="instagram-tile-image"
               loading="lazy"
             />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition group-hover:bg-black/35 group-hover:opacity-100">
-              {post.type === "video" ? (
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-background">
-                  <span className="ml-1 block h-0 w-0 border-y-[8px] border-l-[12px] border-y-transparent border-l-background" />
-                </span>
-              ) : (
-                <span className="rounded-full bg-white/90 px-4 py-2 text-xs font-medium text-background">
-                  View
-                </span>
-              )}
-            </div>
             {post.type === "video" && (
-              <span className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-black/50">
-                <span className="ml-0.5 block h-0 w-0 border-y-[5px] border-l-[8px] border-y-transparent border-l-white" />
+              <span className="instagram-video-icon">
+                <span className="instagram-video-play-triangle" />
               </span>
             )}
           </button>
