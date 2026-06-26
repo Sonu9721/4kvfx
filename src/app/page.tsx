@@ -64,7 +64,7 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center mt-8">
+          <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center max-w-4xl mx-auto mt-8">
             <Reveal delay={80}>
               <div className="overflow-hidden rounded-xl bg-transparent transition-transform duration-300 hover:scale-105 h-full flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
