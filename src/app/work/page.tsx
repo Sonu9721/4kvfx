@@ -28,7 +28,7 @@ export default function WorkPage() {
 
       {/* Instagram feed */}
       {instagramPosts.length > 0 && (
-        <div className="mt-8">
+        <div className="mt-8 max-w-[935px] mx-auto">
           <ManualInstagramGrid posts={instagramPosts} />
         </div>
       )}
