@@ -15,8 +15,8 @@ export const site = {
     "Since 2012, 4K Visuals has been helping brands, filmmakers, and agencies bring bold ideas to life through VFX, 3D Animation, AI-Powered Content, Branding, and Digital Experiences. Based in Mumbai, we deliver world-class creative solutions for films, advertising, television, and commercial productions that inspire, engage, and leave a lasting impact.",
   url: "https://www.4kvfx.com",
   email: "4kvfxstudios@gmail.com",
-  phone: "+91 96992 92346",
-  whatsapp: "919699292346",
+  phone: "+91 91524 00063",
+  whatsapp: "919152400063",
   address: "Mumbai, Maharashtra, India",
   founded: 2012,
   // YouTube video ID for the hero showreel background.
@@ -293,9 +293,11 @@ export const roles = [
   { title: "Roto / Paint Artist", type: "Full-time · Mumbai", text: "Frame-accurate roto, paint and cleanup." },
   { title: "3D Generalist", type: "Full-time · Mumbai", text: "Modelling, texturing, lighting and rendering." },
   { title: "Matchmove Artist", type: "Full-time · Mumbai", text: "Camera tracking and matchmove." },
+  { title: "AI Automation - Generative AI Developer", type: "Full-time · Mumbai", text: "Creating videos, photos, and automated workflows using Generative AI tools (ComfyUI, Stable Diffusion, Midjourney, Kling, etc.)." },
 ];
 
 export const nav = [
+  { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
