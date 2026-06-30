@@ -6,11 +6,14 @@ import Image from "next/image";
 import { site, nav } from "@/lib/content";
 
 export default function Navbar() {
-  const [logoWidth, setLogoWidth] = useState(112);
+  const [logoWidth, setLogoWidth] = useState(120);
+  const [logoTop, setLogoTop] = useState("23px");
 
   useEffect(() => {
     const handleResize = () => {
-      setLogoWidth(window.innerWidth >= 640 ? 224 : 112);
+      const isDesktop = window.innerWidth >= 640;
+      setLogoWidth(isDesktop ? 224 : 120);
+      setLogoTop(isDesktop ? "4px" : "23px");
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -33,20 +36,20 @@ export default function Navbar() {
           }}
           aria-label={site.name}
         >
-          <div className="absolute top-[8px] sm:top-[4px] left-0">
+          <div style={{ position: "absolute", top: logoTop, left: 0 }}>
             <Image
               src="/brand/logo.png"
               alt={site.name}
               width={144}
               height={48}
-              className="h-[36px] sm:h-[72px] w-auto max-w-none"
+              className="h-[40px] sm:h-[72px] w-auto max-w-none"
               priority
             />
           </div>
         </Link>
 
         {/* Navigation links (always visible) */}
-        <div className="flex items-center gap-1.5 sm:gap-7 text-[10px] sm:text-sm text-muted">
+        <div className="flex items-center gap-1 sm:gap-7 text-[9.5px] sm:text-sm text-muted">
           {nav.map((item) => (
             <Link
               key={item.href}
