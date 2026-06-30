@@ -49,10 +49,7 @@ export default function ContactPage() {
             <p className="mb-1 uppercase tracking-[0.15em] text-muted">Studio</p>
             <p>{site.address}</p>
           </div>
-          <div>
-            <p className="mb-1 uppercase tracking-[0.15em] text-muted">Hours</p>
-            <p>Mon–Sat, 10:00 AM – 7:00 PM IST</p>
-          </div>
+
         </aside>
       </div>
     </div>
