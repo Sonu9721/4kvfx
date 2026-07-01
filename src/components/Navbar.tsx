@@ -7,13 +7,13 @@ import { site, nav } from "@/lib/content";
 
 export default function Navbar() {
   const [logoWidth, setLogoWidth] = useState(120);
-  const [logoTop, setLogoTop] = useState("23px");
+  const [logoTop, setLogoTop] = useState("8px");
 
   useEffect(() => {
     const handleResize = () => {
       const isDesktop = window.innerWidth >= 640;
       setLogoWidth(isDesktop ? 224 : 120);
-      setLogoTop(isDesktop ? "4px" : "23px");
+      setLogoTop(isDesktop ? "4px" : "8px");
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-1 sm:py-3">
         <Link
           href="/"
           style={{
@@ -49,12 +49,12 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation links (always visible) */}
-        <div className="flex items-center gap-1 sm:gap-7 text-[9.5px] sm:text-sm text-muted">
+        <div className="flex items-center gap-1 sm:gap-7 text-[9.5px] sm:text-sm text-muted translate-y-[6px] sm:translate-y-0">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="nav-link font-medium transition-colors hover:text-foreground"
+              className="nav-link font-bold transition-colors hover:text-foreground"
             >
               {item.label}
             </Link>
